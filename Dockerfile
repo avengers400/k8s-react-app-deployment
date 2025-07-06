@@ -1,7 +1,9 @@
 #stage 1: Build
-FROM node:l8 as build
+FROM node:18 as build
 MAINTAINER xxxxx@gmail.com
-WORKDIR /app   
+WORKDIR /app  
+COPY package*.json
+RUN npm install 
 COPY . .
 RUN npm run build 
 
